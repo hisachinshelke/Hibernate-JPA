@@ -3,28 +3,29 @@ package com.shelke.sachin.cruddemo.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="student") // mapping to db table student (also, optional - will take class name)
+@Table(name = "student") // mapping to db table student (also, optional - will take class name)
 public class Student {
 
     //define fields
     @Id
-    @GeneratedValue(strategy =  GenerationType.IDENTITY) // Mysql will handle the id generatiom
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Mysql will handle the id generation
     @Column(name = "id")
     private int id;
 
     @Column(name = "first_name") // mapping to db column (also, optional - will take variable name)
-    private int firstName;
+    private String firstName;
 
     @Column(name = "last_name")
-    private int lastName;
+    private String lastName;
 
     @Column(name = "email")
-    private int email;
+    private String email;
 
     //define constructors
-    public Student(){}
+    public Student() {
+    }
 
-    public Student(int firstName, int lastName, int email) {
+    public Student(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -40,27 +41,27 @@ public class Student {
         this.id = id;
     }
 
-    public int getFirstName() {
+    public String getFirstName() {
         return firstName;
     }
 
-    public void setFirstName(int firstName) {
+    public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
-    public int getLastName() {
+    public String getLastName() {
         return lastName;
     }
 
-    public void setLastName(int lastName) {
+    public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
-    public int getEmail() {
+    public String getEmail() {
         return email;
     }
 
-    public void setEmail(int email) {
+    public void setEmail(String email) {
         this.email = email;
     }
 
