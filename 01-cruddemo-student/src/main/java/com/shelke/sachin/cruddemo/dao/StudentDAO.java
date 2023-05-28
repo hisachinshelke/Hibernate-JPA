@@ -11,4 +11,6 @@ public interface StudentDAO { // acts as a mediator between app and db
     Student findById(Integer id);
 
     List<Student> findAll();
+
+    List<Student> findByLastName(String theLastName);
 }
