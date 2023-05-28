@@ -19,8 +19,32 @@ public class CrudDemoApplication {
         return runner -> {
             // createStudent(studentDAO);
 
-            createMultipleStudents(studentDAO);
+            //  createMultipleStudents(studentDAO);
+
+            //read student
+            readStudent(studentDAO);
         };
+    }
+
+    private void readStudent(StudentDAO studentDAO) {
+        //create a student
+        System.out.println("Creating the student object>>>>");
+        Student tempStudent1 = new Student("Mickey", "Mousese", "Mickey@Mickey.Mickey");
+
+        //save the student
+        System.out.println("Saving students>>>>");
+        studentDAO.save(tempStudent1);
+
+        //display id of saved student
+        int theId = tempStudent1.getId();
+        System.out.println("Saved student, generated id : " + theId);
+
+        //retrieve student by id - primary key
+        System.out.println("Retrieving student>>>");
+        Student myStudent = studentDAO.findById(theId);
+
+        //display the student
+        System.out.println("Found Student: " + myStudent);
     }
 
     private void createMultipleStudents(StudentDAO studentDAO) {
@@ -53,5 +77,8 @@ public class CrudDemoApplication {
 
         //display id of saved student
         System.out.println("Saved student: Generated Id: " + tempStudent.getId());
+
+        //ALTER TABLE student_tracker.student AUTO_INCREMENT=3000 - sets autoincrement value to 3000
+        //TRUNCATE student_tracker.student - removed data from DB
     }
 }

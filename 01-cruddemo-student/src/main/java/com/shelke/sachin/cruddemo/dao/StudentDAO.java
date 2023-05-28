@@ -6,4 +6,6 @@ public interface StudentDAO { // acts as a mediator between app and db
 
     void save(Student theStudent);
 
+    Student findById(Integer id);
+
 }
