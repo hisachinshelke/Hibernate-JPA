@@ -17,4 +17,6 @@ public interface StudentDAO { // acts as a mediator between app and db
     void update(Student theStudent);
 
     void delete(Integer id);
+
+    int deleteAll();
 }
