@@ -15,4 +15,6 @@ public interface StudentDAO { // acts as a mediator between app and db
     List<Student> findByLastName(String theLastName);
 
     void update(Student theStudent);
+
+    void delete(Integer id);
 }
